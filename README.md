@@ -45,3 +45,6 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|null: false, unique: true|
 |E-mail|text|null: false, unique: true|
+### Association
+- has_many :members
+- has_many :messages
