@@ -36,3 +36,6 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+### Association
+- has_many :members
+- has_many :messages
