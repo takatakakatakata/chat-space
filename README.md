@@ -39,3 +39,9 @@ Things you may want to cover:
 ### Association
 - has_many :members
 - has_many :messages
+
+## usersテーブル
+|Column|Type|Options|
+|------|----|-------|
+|name|string|null: false, unique: true|
+|E-mail|text|null: false, unique: true|
