@@ -45,10 +45,11 @@ Things you may want to cover:
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|name|string|null: false, unique: true|
+|name|string|null: false, unique: true,index: true|
 |E-mail|text|null: false, unique: true|
 ### Association
 - has_many :members
+- has_many :groups,through: :members
 - has_many :messages
 
 ## messagesテーブル
