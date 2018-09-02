@@ -1,0 +1,58 @@
+.clearfix:after{
+  clear:both;
+  content:"";
+  display:block;
+}
+@mixin back-color($backcolor: #38aef0){
+  background: $backcolor;
+}
+.color{
+  color:white;
+}
+.announce{
+  color:#ffffff;
+  @include back-color();
+  text-align: center;
+}
+
+.pagebody{
+  &__left{
+    width:300px;
+    @include back-color(#2f3e51);
+    float:left;
+    min-height:calc( 100vh - 15vh );
+    .pagelink{
+      text-decoration:none;
+      .pagebody__left-partial{
+        color:#ffffff;
+        word-break: break-all;
+        .groupname{
+          margin:20px 20px 5px 20px;
+          font-size:15px;
+        }
+        .firstcomment{
+          margin:0 20px 40px 20px;
+          font-size:11px;
+        }
+      }
+    }
+  }
+  &__main{
+    width: calc( 100vw - 300px );
+    min-height:calc( 100vh - 15vh );
+    float:right;
+    .pagefooter{
+      @include back-color(#aaaaaa);
+      width: calc( 100vw - 300px );
+      position:absolute;
+      bottom:0;
+      height:90px;
+      &_bar{
+        height:50px;
+        @include back-color(#ffffff);
+        margin:20px 170px 0px 40px;
+      }
+    }
+  }
+  position:relative;
+}

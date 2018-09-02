@@ -1,0 +1,48 @@
+.pageheader:after{
+  content: '';
+    display: block;
+    clear: both;
+}
+.pageheader{
+  position:relative;
+  height:15vh;
+  &__leftside{
+    height:15vh;
+    width:300px;
+    float:left;
+    @include back-color(#253141);
+    &--aboutgroup{
+      position:absolute;
+      top:40%;
+      left:20px;
+      width:300px;
+      height:20px;
+      p{
+        font-size:16px;
+        color:#ffffff;
+        font-weight:bold;
+        float:left;
+      }
+      .pageheader_leftside--aboutgroup--icons{
+        margin-right:40px;
+        float:right;
+      }
+    }
+  }
+  .pageheader__rightside{
+    height:15vh;
+    width:calc( 100vw - 300px );
+    float:left;
+    border-bottom:1px solid #eeeeee;
+    &--groupname{
+      font-size:20px;
+      color:#333333;
+      margin:35px 0 15px 40px;
+    }
+    &--membername{
+      font-size:12px;
+      color:#999999;
+      margin:0 0 0 40px;
+    }
+  }
+}

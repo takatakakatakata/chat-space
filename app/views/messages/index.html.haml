@@ -1,9 +1,21 @@
 %div.page
   %div.announce チャットグループが作成されました
-  %div.pageheader
+  %div.pageheader.clearfix
     %div.pageheader__leftside
-  %div.pagebody.crearfix
+      %div.pageheader__leftside--aboutgroup
+        %p aaa111
+        %div.pageheader_leftside--aboutgroup--icons
+          %a(href="#")
+            %i.fa.fa-pencil-square-o.color
+          %a(href="#")
+            %i.fa.fa-cog.color
+    %div.pageheader__rightside
+      %div.pageheader__rightside--groupname aaa111
+      %div.pageheader__rightside--editbutton
+      %div.pageheader__rightside--membername Members: dwrfwfgqgfs
+  %div.pagebody.clearfix
     %div.pagebody__left
+      = render partial: 'group'
     %div.pagebody__main
       %div.pagefooter
         %div.pagefooter_bar
