@@ -12,7 +12,7 @@
     .pagelink{
       text-decoration:none;
       .pagebody__left-partial{
-        color:#ffffff;
+        color:$offwhite_subtext;
         .groupname{
           margin:20px 20px 5px 20px;
           font-size:15px;
@@ -42,7 +42,7 @@
         }
         &--date{
           float:left;
-          @include font-color_size(#999999,12px);
+          @include font-color_size($gray_subtext,12px);
           margin:3px 0 0 0;
           white-space: nowrap;
         }
@@ -61,7 +61,7 @@
       &__form--input{
         @include placeholder_padding;
         height:50px;
-        background:#ffffff;
+        background:$offwhite_subtext;
         margin:20px 170px 0px 40px;
         min-width:calc(100vw - 490px);
         float:left;
@@ -69,11 +69,11 @@
       &__form--button{
         @include height-width(50px,90px);
         font-weight:bold;
-        background:#38aef0;
+        background:$lightblue_subcontents;
         color:white;
         -webkit-appearance: none;
         border-radius: 0;
-        border:1px solid #38aef0;
+        border:1px solid $lightblue_subcontents;
         position:absolute;
         right:40px;
         top:20px;
