@@ -1,32 +1,23 @@
-.pageheader:after{
-  content: '';
-    display: block;
-    clear: both;
-}
-
 .notification{
   color:#ffffff;
-  @include back-color();
+  background:#38aef0;
   text-align: center;
 }
 .pageheader{
-  // @include clearfix;
+  @include clearfix;
   position:relative;
   height:120px;
   &__leftside{
-    height:120px;
-    width:300px;
+    @include height-width(120px,300px);
     float:left;
-    @include back-color(#253141);
+    background:#253141;
     &--aboutgroup{
       position:absolute;
       top:40%;
       left:20px;
-      width:300px;
-      height:20px;
+      @include height-width(20px,300px);
       &--username{
-        font-size:16px;
-        color:#ffffff;
+        @include font-color_size(#ffffff,16px);
         font-weight:bold;
         float:left;
       }
@@ -37,17 +28,14 @@
     }
   }
   .pageheader__rightside{
-    height:120px;
-    width:calc( 100vw - 300px );
+    @include height-width(120px,calc( 100vw - 300px ));
     float:left;
     &__groupname{
-      font-size:20px;
-      color:#333333;
+      @include font-color_size(#333333,20px);
       margin:35px 0 15px 40px;
     }
     &__membername{
-      font-size:12px;
-      color:#999999;
+      @include font-color_size(#999999,12px);
       margin:0 0 0 40px;
     }
     &__editbutton{

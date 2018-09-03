@@ -1,15 +1,13 @@
 
-.color{
+.icon--white{
   color:white;
 }
-
 .pagebody{
   @include clearfix;
   &__left{
-    width:300px;
-    @include back-color(#2f3e51);
+    @include height-width(calc( 100vh - 15vh ),300px);
+    background:#2f3e51;
     float:left;
-    height:calc( 100vh - 15vh );
     overflow-x:scroll;
     .pagelink{
       text-decoration:none;
@@ -28,8 +26,7 @@
   }
   &__main{
     border-top:1px solid #eeeeee;
-    width: calc( 100vw - 300px );
-    height:calc( 100vh - 15vh );
+    @include height-width(calc( 85vh - 90px ),calc( 100vw - 300px ));
     float:right;
     overflow-x:scroll;
     &--partial{
@@ -38,16 +35,14 @@
         padding:46px 0 0 0;
         margin:0 40px 0 40px;
         &--membername{
+          @include font-color_size(#434a54,16px);
           float:left;
           margin:0 10px 0 0;
-          font-size:16px;
           font-weight:bold;
-          color:#434a54;
         }
         &--date{
           float:left;
-          font-size:12px;
-          color:#999999;
+          @include font-color_size(#999999,12px);
           margin:3px 0 0 0;
           white-space: nowrap;
         }
@@ -59,21 +54,20 @@
     }
     }
     .pagefooter{
-      @include back-color(#ddd);
-      width: calc( 100vw - 300px );
+      background:#ddd;
       position:absolute;
       bottom:0;
-      height:90px;
+      @include height-width(90px,calc( 100vw - 300px ));
       &__form--input{
+        @include placeholder_padding;
         height:50px;
-        @include back-color(#ffffff);
+        background:#ffffff;
         margin:20px 170px 0px 40px;
         min-width:calc(100vw - 490px);
         float:left;
       }
       &__form--button{
-        width:90px;
-        height:50px;
+        @include height-width(50px,90px);
         font-weight:bold;
         background:#38aef0;
         color:white;
@@ -88,5 +82,3 @@
   }
   position:relative;
 }
-
-
