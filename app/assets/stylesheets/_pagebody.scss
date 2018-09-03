@@ -1,21 +1,10 @@
-.clearfix:after{
-  clear:both;
-  content:"";
-  display:block;
-}
-@mixin back-color($backcolor: #38aef0){
-  background: $backcolor;
-}
+
 .color{
   color:white;
 }
-.announce{
-  color:#ffffff;
-  @include back-color();
-  text-align: center;
-}
 
 .pagebody{
+  @include clearfix;
   &__left{
     width:300px;
     @include back-color(#2f3e51);
@@ -26,7 +15,6 @@
       text-decoration:none;
       .pagebody__left-partial{
         color:#ffffff;
-        word-break: break-all;
         .groupname{
           margin:20px 20px 5px 20px;
           font-size:15px;
@@ -46,11 +34,12 @@
     overflow-x:scroll;
     &--partial{
       &--about{
-        padding-top:46px;
+        @include clearfix;
+        padding:46px 0 0 0;
         margin:0 40px 0 40px;
         &--membername{
           float:left;
-          margin-right:10px;
+          margin:0 10px 0 0;
           font-size:16px;
           font-weight:bold;
           color:#434a54;
@@ -59,25 +48,45 @@
           float:left;
           font-size:12px;
           color:#999999;
-          margin-top:1px
+          margin:3px 0 0 0;
+          white-space: nowrap;
         }
       }
      &--message{
-      margin:10px 40px 40px 40px;
+      margin:10px 0px 40px 40px;
+      word-wrap: break-word;
+      min-width:450px;
     }
     }
     .pagefooter{
-      @include back-color(#aaaaaa);
+      @include back-color(#ddd);
       width: calc( 100vw - 300px );
       position:absolute;
       bottom:0;
       height:90px;
-      &_bar{
+      &__form--input{
         height:50px;
         @include back-color(#ffffff);
         margin:20px 170px 0px 40px;
+        min-width:calc(100vw - 490px);
+        float:left;
+      }
+      &__form--button{
+        width:90px;
+        height:50px;
+        font-weight:bold;
+        background:#38aef0;
+        color:white;
+        -webkit-appearance: none;
+        border-radius: 0;
+        border:1px solid #38aef0;
+        position:absolute;
+        right:40px;
+        top:20px;
       }
     }
   }
   position:relative;
 }
+
+

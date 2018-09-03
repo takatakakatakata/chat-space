@@ -1,19 +1,20 @@
 %div.page
-  %div.announce チャットグループが作成されました
+  %div.notification チャットグループが作成されました
   %div.pageheader.clearfix
     %div.pageheader__leftside
       %div.pageheader__leftside--aboutgroup
-        %p aaa111
-        %div.pageheader_leftside--aboutgroup--icons
-          %a(href="#")
+        %p.pageheader__leftside--aboutgroup--username username
+        %div.pageheader_leftside--aboutgroup--icons.fa-lg
+          =link_to "/" , class:"link" do
             %i.fa.fa-pencil-square-o.color
-          %a(href="#")
+          =link_to "/" , class:"link" do
             %i.fa.fa-cog.color
     %div.pageheader__rightside
-      %div.pageheader__rightside--groupname aaa111
-      %div.pageheader__rightside--editbutton
-        %p.pageheader__rightside--editbutton--string Edit
-      %div.pageheader__rightside--membername Members: dwrfwfgqgfs
+      %div.pageheader__rightside__groupname groupname
+      %div.pageheader__rightside__editbutton
+        =link_to "/" , class:"link" do
+          %p.pageheader__rightside__editbutton--string Edit
+      %p.pageheader__rightside__membername Members: membername
   %div.pagebody.clearfix
     %div.pagebody__left
       = render partial: 'group'
@@ -24,7 +25,10 @@
       = render partial: 'group'
       = render partial: 'group'
       = render partial: 'group'
-
+      = render partial: 'group'
+      = render partial: 'group'
+      = render partial: 'group'
+      = render partial: 'group'
     %div.pagebody__main
       = render partial: 'chatmessage'
       = render partial: 'chatmessage'
@@ -34,8 +38,10 @@
       = render partial: 'chatmessage'
       = render partial: 'chatmessage'
       = render partial: 'chatmessage'
-      = render partial: 'chatmessage'
-      = render partial: 'chatmessage'
-      = render partial: 'chatmessage'
       %div.pagefooter
-        %div.pagefooter_bar
+        %form.pagefooter__form
+          %input(placeholder="type a message" class="pagefooter__form--input")
+            %label
+              %i.fa.fa-image.pagefooter__form--icon
+              %input(type="file" id="filesend")
+          %input(type="submit" name="aaa" value="Send" class="pagefooter__form--button")
