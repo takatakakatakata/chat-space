@@ -1,0 +1,54 @@
+.notification{
+  color:$offwhite_subtext;
+  background: $lightblue_subcontents;
+  text-align: center;
+}
+.pageheader{
+  @include clearfix;
+  position:relative;
+  height:120px;
+  &__leftside{
+    @include height-width(120px,300px);
+    float:left;
+    background:#253141;
+    &--aboutgroup{
+      position:absolute;
+      top:40%;
+      left:20px;
+      @include height-width(20px,300px);
+      &--username{
+        @include font-color_size($offwhite_subtext,16px);
+        font-weight:bold;
+        float:left;
+      }
+      .pageheader_leftside--aboutgroup--icons{
+        margin-right:40px;
+        float:right;
+      }
+    }
+  }
+  .pageheader__rightside{
+    @include height-width(120px,calc( 100vw - 300px ));
+    float:left;
+    &__groupname{
+      @include font-color_size(#333333,20px);
+      margin:35px 0 15px 40px;
+    }
+    &__membername{
+      @include font-color_size($gray_subtext,12px);
+      margin:0 0 0 40px;
+    }
+    &__editbutton{
+      position:absolute;
+      top:28px;
+      right:40px;
+      border:2px solid $lightblue_subcontents;
+      height:40px;
+      &--string{
+        padding:7px 20px 10px 20px;
+        color:$lightblue_subcontents;
+        font-weight:200;
+      }
+    }
+  }
+}

@@ -1,0 +1,14 @@
+@mixin height-width($h: 10px,$w: 10px){
+  height: $h;
+  width: $w;
+}
+@mixin placeholder_padding {
+  &::placeholder {
+    padding:10px;
+  }
+}
+@mixin font-color_size($color: #000000,$size: 10px){
+  color: $color;
+  font-size: $size;
+}
+
