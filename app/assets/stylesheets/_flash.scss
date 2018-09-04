@@ -1,0 +1,12 @@
+.flash {
+  color:$offwhite_subtext;
+  text-align: center;
+  &__alert{
+    background-color: $alert_orange;
+;
+  }
+  &__notice {
+  background: $lightblue_subcontents;
+  }
+}
+
