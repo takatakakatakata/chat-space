@@ -38,6 +38,13 @@
     &__membername{
       @include font-color_size($gray_subtext,12px);
       margin:0 0 0 40px;
+      &--tag{
+        float:left;
+      }
+      &--name{
+        float:left;
+        margin:0 5px 0 0;
+      }
     }
     &__editbutton{
       position:absolute;
