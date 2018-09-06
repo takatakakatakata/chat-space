@@ -3,7 +3,7 @@
     %p.pagebody__main--partial--about--membername 
       = message.user.name
     %p.pagebody__main--partial--about--date 
-      = message.created_at.strftime("%Y/%m/%d%H:%M")
+      = message.created_at.strftime("%Y/%m/%d %H:%M:%S")
   -if message.body.present?
     %p.pagebody__main--partial--message 
       = message.body
