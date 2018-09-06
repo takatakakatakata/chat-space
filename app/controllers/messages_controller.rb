@@ -4,6 +4,7 @@ class MessagesController < ApplicationController
     @message = Message.new
     @messages = @group.messages.includes(:user)
   end
+
   def create
     @message = @group.messages.new(messages_params)
     if @message.save
@@ -14,16 +15,12 @@ class MessagesController < ApplicationController
       render :index
     end
   end
+  
   private
   def messages_params
     params.require(:message).permit(:body,:image).merge(user_id: current_user.id)
   end
   def set_group
     @group = Group.find(params[:group_id])
-  end
-  def create
-  end
-  private
-  def messages_params
   end
 end

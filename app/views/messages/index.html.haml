@@ -28,11 +28,11 @@
       - @messages.each do |message|
         = render partial: 'messages/chatmessage',locals: {message: message}
       %div.pagefooter
-        =form_for [@group,@message] do |f|
+        = form_for [@group,@message] do |f|
           %div.pagefooter__form
             =f.text_field :body ,class: "pagefooter__form--input", placeholder:"type a message"
             %div.form
               =f.label :image do
-                =fa_icon 'picture-o', class: 'pagefooter__form--icon' 
+                =fa_icon 'picture-o', class: 'pagefooter__form--icon'
                 =f.file_field :image,class:"pagefooter--filesend"
               =f.submit "Send",class:"pagefooter__form--button"
