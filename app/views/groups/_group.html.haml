@@ -2,4 +2,9 @@
   %div.pagebody__left-partial
     %p.groupname 
       = group.name
-    %p.firstcomment まだメッセージはありません
+    %p.firstcomment
+      - if group.messages.present?
+        = group.messages.last.body
+      - else
+        まだメッセージがありません
+
