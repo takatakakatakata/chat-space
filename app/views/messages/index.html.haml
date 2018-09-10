@@ -25,12 +25,13 @@
       - current_user.groups.each do |group|
         = render partial: 'groups/group' ,locals: { group: group }
     %div.pagebody__main
-      - @messages.each do |message|
-        = render partial: 'messages/chatmessage',locals: {message: message}
+      %div.pagebody__main--message--ajax
+        - @messages.each do |message|
+          = render partial: 'messages/chatmessage',locals: {message: message}
       %div.pagefooter
-        = form_for [@group,@message] do |f|
+        = form_for [@group,@message] ,id:"new_message" do |f|
           %div.pagefooter__form
-            =f.text_field :body ,class: "pagefooter__form--input", placeholder:"type a message"
+            =f.text_field :body ,class: "pagefooter__form--input",id:"text_box", placeholder:"type a message"
             %div.form
               =f.label :image do
                 =fa_icon 'picture-o', class: 'pagefooter__form--icon'
