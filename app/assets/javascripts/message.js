@@ -16,12 +16,18 @@ $(function(){
                 </div>`
     return html;
   }
-
+// メッセージの投稿の後一番下までスクロール
+  function scroll_Bottom(){
+    $('.pagebody__main').animate({scrollTop: $('.pagebody__main')[0].scrollHeight}, 'swift');
+  }
+// フォームをリセット
+  function reset_form(){
+    $('.pagefooter__form--button').prop("disabled", false);
+  }
 
   $('#new_message').on('submit',function(e){
     e.preventDefault();
     var formData = new FormData(this);
-    console.log(this);
     var url = $(this).attr('action');
     $.ajax({
       url: url,
@@ -35,13 +41,12 @@ $(function(){
       var html = buildHTML(data);
       $('.pagebody__main--message--ajax').append(html);
       $('#new_message')[0].reset();
-      $('.pagefooter__form--button').prop("disabled", false);
+      reset_form();
     })
     .fail(function(){
-      alert('テキストか画像を投稿してください');
-      $('.pagefooter__form--button').prop("disabled", false);
+      alert('送信に失敗しました');
+      reset_form();
     })
-    $('.pagebody__main').animate({scrollTop: $('.pagebody__main')[0].scrollHeight}, 'swift');
-
+    scroll_Bottom();
   })
 });
