@@ -1,37 +1,38 @@
-%div.page
-  %div.pageheader.clearfix
-    %div.pageheader__leftside
-      %div.pageheader__leftside--aboutgroup
+.page
+  .pageheader.clearfix
+    .pageheader__leftside
+      .pageheader__leftside--aboutgroup
         %p.pageheader__leftside--aboutgroup--username 
           =current_user.name
-        %div.pageheader_leftside--aboutgroup--icons.fa-lg
+        .pageheader_leftside--aboutgroup--icons.fa-lg
           =link_to new_group_path , class:"icon_link" do
             %i.fa.fa-pencil-square-o.icon--white
           =link_to edit_user_path(current_user) , class:"icon_link" do
             %i.fa.fa-cog.icon--white
-    %div.pageheader__rightside
-      %div.pageheader__rightside__groupname 
+    .pageheader__rightside
+      .pageheader__rightside__groupname 
         = @group.name
-      %div.pageheader__rightside__editbutton
-        =link_to edit_group_path(current_user) , class:"icon_link" do
+      .pageheader__rightside__editbutton
+        =link_to edit_group_path(@group) , class:"icon_link" do
           %p.pageheader__rightside__editbutton--string Edit
-      %div.pageheader__rightside__membername
+      .pageheader__rightside__membername
         %p.pageheader__rightside__membername--tag Member: 
         - @group.users.each do |user| 
           %p.pageheader__rightside__membername--name
             = user.name
-  %div.pagebody.clearfix
-    %div.pagebody__left
+  .pagebody.clearfix
+    .pagebody__left
       - current_user.groups.each do |group|
         = render partial: 'groups/group' ,locals: { group: group }
-    %div.pagebody__main
-      - @messages.each do |message|
-        = render partial: 'messages/chatmessage',locals: {message: message}
-      %div.pagefooter
-        = form_for [@group,@message] do |f|
-          %div.pagefooter__form
-            =f.text_field :body ,class: "pagefooter__form--input", placeholder:"type a message"
-            %div.form
+    .pagebody__main
+      .pagebody__main--message--ajax
+        - @messages.each do |message|
+          = render partial: 'messages/chatmessage',locals: {message: message}
+      .pagefooter
+        = form_for [@group,@message] ,id:"new_message" do |f|
+          .pagefooter__form
+            =f.text_field :body ,class: "pagefooter__form--input",id:"text_box", placeholder:"type a message"
+            .form
               =f.label :image do
                 =fa_icon 'picture-o', class: 'pagefooter__form--icon'
                 =f.file_field :image,class:"pagefooter--filesend"
