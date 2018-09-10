@@ -20,7 +20,6 @@ $(function(){
   function scroll_Bottom(){
     $('.pagebody__main').animate({scrollTop: $('.pagebody__main')[0].scrollHeight}, 'swift');
   }
-// フォームをリセット
   function reset_form(){
     $('.pagefooter__form--button').prop("disabled", false);
   }
