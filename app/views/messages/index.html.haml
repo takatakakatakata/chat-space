@@ -13,7 +13,7 @@
       .pageheader__rightside__groupname 
         = @group.name
       .pageheader__rightside__editbutton
-        =link_to edit_group_path(current_user) , class:"icon_link" do
+        =link_to edit_group_path(@group) , class:"icon_link" do
           %p.pageheader__rightside__editbutton--string Edit
       .pageheader__rightside__membername
         %p.pageheader__rightside__membername--tag Member: 
