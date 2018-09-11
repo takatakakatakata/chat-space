@@ -18,11 +18,9 @@ $(function(){
     })
 
     .done(function(users){
-      if(users.length !== 0){
-        users.forEach(function(user){
-        $('#user-search-result').append(builduserlist(user));
-        });
-      }
+      users.forEach(function(user){
+      $('#user-search-result').append(builduserlist(user));
+      });
     })
     .fail(function(){
       alert("検索に失敗しました");
