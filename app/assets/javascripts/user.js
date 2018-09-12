@@ -50,8 +50,6 @@ $(function(){
 //削除機能
  $(document).on("click",".user-search-remove.chat-group-user__btn.chat-group-user__btn--remove.js-remove-btn",function(){
    $(this).parent().remove();
-   a=$(this).parent();
-   console.log(a)
  });
 
 });
