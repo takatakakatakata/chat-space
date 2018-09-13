@@ -10,7 +10,7 @@ $(function(){
     })
 
     .done(function(json_messages){
-      //chat欄の一番下のmessageのid
+
       var id = $('.pagebody__main--partial:last').data('message-id');
 
       json_messages.messages.forEach(function(message){
@@ -32,8 +32,8 @@ $(function(){
     }
   }
 
-  setInterval(update,2000);
-  // メッセージの非同期通信
+  setInterval(update,5000);
+
   function buildHTML(message){
     var img = message.image.url ?`<img src="${message.image.url}">` :``
     var html = `<div class="pagebody__main--partial" data-message-id="${ message.id }">
@@ -51,14 +51,14 @@ $(function(){
                 </div>`
     return html;
   }
-// メッセージの投稿の後一番下までスクロール
+
   function scroll_Bottom(){
     $('.pagebody__main').animate({scrollTop: $('.pagebody__main')[0].scrollHeight}, 'swift');
   }
   function reset_form(){
     $('.pagefooter__form--button').prop("disabled", false);
   }
-// 非同期通信のajax
+
   $('#new_message').on('submit',function(e){
     e.preventDefault();
     var formData = new FormData(this);
@@ -71,14 +71,14 @@ $(function(){
       processData: false,
       contentType: false
     })
-    // 非同期通信成功
+
     .done(function(data){
       var html = buildHTML(data);
       $('.pagebody__main--message--ajax').append(html);
       $('#new_message')[0].reset();
       reset_form();
     })
-    // 非同期通信失敗
+
     .fail(function(){
       alert('送信に失敗しました');
       reset_form();
