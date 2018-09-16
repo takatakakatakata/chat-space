@@ -25,7 +25,7 @@ $(function(){
     }}
   setInterval(update,5000);
   function buildHTML(message){
-    var img = message.image.url ?`<img src="${message.image.url}">` :``
+    var img = message.image.url ?`<img src="${message.image.url}">` :""
     var html = `<div class="pagebody__main--partial" data-message-id="${ message.id }">
                   <div class="pagebody__main--partial--about clearfix">
                     <p class="pagebody__main--partial--about--membername ">${message.user_name}
