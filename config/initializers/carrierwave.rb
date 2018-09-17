@@ -13,5 +13,5 @@ CarrierWave.configure do |config|
   }
 
   config.fog_directory  = 'test-takahaya'
-  config.asset_host = 'https://s3-us-east-1.amazonaws.com/test-takahaya'
+  config.asset_host = 'https://s3.amazonaws.com/test-takahaya'
 end
