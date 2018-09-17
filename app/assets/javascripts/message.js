@@ -9,7 +9,7 @@ $(function(){
     .done(function(json_messages){
       var id = $('.pagebody__main--partial:last').data('message-id');
       json_messages.messages.forEach(function(message){
-        var new_message_id = message.id
+        var new_message_id = message.id;
         if (id < new_message_id){
           var new_message = buildHTML(message);
           $('.pagebody__main--message--ajax').append(new_message);
@@ -18,7 +18,7 @@ $(function(){
       });
     })
     .fail(function(){
-      alert('通信に失敗しました')
+      alert('通信に失敗しました');
     });
     } else {
       clearInterval(5000);
